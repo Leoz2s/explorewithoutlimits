@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: 'Mulish', sans-serif;
+
+  --hue: 240;
+  --bgc-primary: #F9F4FB;
+  --bgc-secondary: linear-gradient(134deg, #343193 0%, #302C63 100%);
+  --bgc-tertiary: #FFFFFF;
+  --fc-primary: #B52184;
+  --fc-secondary: #312D64;
+}
+
+#page {
+  background-color: var(--bgc-primary);
+
+  font-weight: 600;
+  color: var(--fc-secondary);
+
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: 900;
+  color: var(--fc-primary);
+  font-size: 3.2rem;
+}
+button {
+  font-weight: 700;
+  color: var(--bgc-tertiary);
+}
+
+
+/* Header */
+header img:nth-child(1) {
+  margin-bottom: 1.7rem;
+  
+  width: 36.4rem;
+}
+
+header p {
+  margin-bottom: 3.5rem;
+  
+  font-size: 2rem;
+}
+
+header img:nth-child(3) {
+  margin-bottom: 6.3rem; 
+}
+
+/* Main */
+main {
+  background-image: var(--bgc-secondary);
+  
+  padding: 5.3rem 0;
+}
+
+main .card-group {
+  display: grid;
+  justify-items: center;
+  gap: 5rem;
+}
+
+main .card-wrapper {
+  background-color: var(--bgc-tertiary);
+  
+  padding: 2.7rem;
+  
+  width: 35.2rem;
+  height: 39.7rem;
+  
+  border-radius: 20px;
+  
+  text-align:start;
+  
+  display: grid;
+  justify-items: start;
+  gap: 3.3rem;
+}
+
+main .card-wrapper h2 {
+  font-size: 2.9rem;
+
+  margin-bottom: 2rem;
+}
+main .card-wrapper p {
+  font-size: 1.6rem;
+}
+
+/* Contact Section */
+.contact-wrapper {
+  padding: 7.8rem 1rem 6.5rem;
+
+  display: grid;
+  justify-content: center;
+  justify-items: start;
+  gap: 2.4rem;
+}
+
+.contact-wrapper input, .contact-wrapper textarea {
+  background-color: var(--bgc-primary);
+  
+  border-radius: 16px;
+  
+  padding: 1.2rem 1.4rem;
+  
+  width: 34.8rem;
+  
+  font-size: 1.6rem;
+  
+  border: 2px solid #312D64;
+}
+
+.contact-wrapper input:focus, .contact-wrapper textarea:focus, button:focus {
+  outline: 0.5rem solid rgb(40, 34, 80);
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.contact-wrapper img {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+input:required:not(:placeholder-shown) + img {
+  display: none;
+}
+
+input:required:not(:placeholder-shown):invalid{
+  border: 4px solid #C9001b;
+}
+
+.contact-wrapper textarea {
+  font-family: 'Mulish', sans-serif;
+}
+
+.contact-wrapper button {
+  background-image: var(--bgc-secondary);
+  
+  padding: 1.6rem;
+  
+  border-radius: 16px;
+  
+  font-size: 1.4rem;
+
+  margin: 0 auto;
+}
+
+.contact-section > img:nth-child(2) {
+  display: none;
+}
+
+/* Footer */
+footer {
+  background-image: var(--bgc-secondary);
+
+  padding: 1.6rem 0;
+
+  font-size: 2rem;
+  color: var(--bgc-tertiary);
+}
+
+/* Meida querries */
+@media (max-width: 370px) {
+  /* Size ajust */
+  header img:nth-child(1) {
+    width: 32rem;
+  }
+  main .card-wrapper {
+    width: 32rem;
+  }
+  .contact-wrapper input, .contact-wrapper textarea {
+    width: 32rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Header */
+  header {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 16.8rem;
+
+    position: relative;
+  }
+  
+  .header-text {
+    margin-top: 10.2rem;
+
+    text-align: start;
+
+    position: relative;
+  }
+
+  header > img:nth-child(3) {
+    position: absolute;
+    
+    top: 25rem;
+    left: 0.5rem;
+  }
+  
+  /* Test of position (Check documentation of CSS) */
+  /* .header {
+    background-color: red;
+
+    position: relative;
+  }
+  .heaader > img:nth-child(1) {
+    position: absolute;
+    
+    left: 200rem;
+    bottom: 100rem;
+  } */
+
+  /* Main */
+  main .card-group {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+
+    animation: left-right 1s ease-in-out;
+
+  }
+  
+  .card-wrapper {
+    transition: transform 1s ease-in-out;
+  }
+
+  main .card-group .card-wrapper:hover {
+    transform: scale(1.05);
+  }
+
+  /* Contact Section */  
+  .contact-section {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-items: center;    
+  }
+
+  .contact-section > img:nth-child(2) {
+    display: block;
+
+    width: clamp(50rem, 61rem + 4vw, 68rem);
+    height: 61rem;
+
+    place-self: end;
+  }
+
+  .contact-wrapper button {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1061px) {
+  .contact-section > img:nth-child(2) {
+    display: block;
+
+    height: 65.1rem;
+    width: initial;
+  }
+}
+
+@media (min-width: 1280px) {
+  header {
+    display: inline-flex;
+    gap: 5rem;
+  }
+
+  header img:nth-child(1) {
+    height: 71.9rem;
+    width: 73.2rem;
+  }
+  .header-text {
+    margin: 28.2rem 0 0 5rem;
+
+    position: relative;
+  }
+  .header-text h1 {
+    font-size: 4.5rem;
+  }
+  .header-text p {
+    font-size: 2.5rem;
+  }
+  header > img:nth-child(3) {
+    position: absolute;
+    
+    top: 45rem;
+    left: 4.5rem;
+  }
+
+}
+
+/* Animations */
+@keyframes left-right {
+  from {
+    transform: scale(1.23);
+  }
+
+  50% {
+    transform: scaleX(1.25);
+  }
+
+  to {
+    
+  }
+}
